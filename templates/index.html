@@ -1,28 +1,28 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="utf-8">
-    <title>小六壬 Prediction</title>
+    <title>小六壬预测</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <div class="container">
-        <h1>Enter Date and Time</h1>
+        <h1>请输入日期和时间</h1>
         <form action="/predict" method="post">
-            <label for="year">Year:</label>
+            <label for="year">年份：</label>
             <select id="year" name="year" required>
                 {% for year in range(1900, 2101) %}
-                    <option value="{{ year }}" {% if year == current_year %}selected{% endif %}>{{ year }}</option>
+                    <option value="{{ year }}" {% if year == current_year %}selected{% endif %}>{{ year }}年</option>
                 {% endfor %}
             </select><br>
 
-            <label for="date">Date (YYYY-MM-DD):</label>
+            <label for="date">日期（阳历）：</label>
             <input type="date" id="date" name="date" value="{{ current_date }}" required><br>
             
-            <label for="time">Time (HH:MM):</label>
+            <label for="time">时间：</label>
             <input type="time" id="time" name="time" value="12:00" required><br><br>
             
-            <input type="submit" value="Submit">
+            <input type="submit" value="开始预测">
         </form>
     </div>
 </body>
