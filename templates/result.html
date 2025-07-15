@@ -12,9 +12,9 @@
             <p>您输入的阳历日期：{{ solar_year }}年{{ solar_month }}月{{ solar_day }}日 {{ time_str }}</p>
             <p>对应的农历日期：{{ lunar_year }}年{{ lunar_month }}月{{ lunar_day }}日</p>
             <h2>小六壬预测结果：</h2>
-            <p>月份落宫：{{ month_position }}</p>
-            <p>日期落宫：{{ day_position }}</p>
-            <p>时辰落宫：{{ hour_position }}</p>
+            <p>月份落宫：<span class="{% if month_position in ['留连', '赤口', '空亡'] %}bad-result{% else %}good-result{% endif %}">{{ month_position }}</span></p>
+            <p>日期落宫：<span class="{% if day_position in ['留连', '赤口', '空亡'] %}bad-result{% else %}good-result{% endif %}">{{ day_position }}</span></p>
+            <p>时辰落宫：<span class="{% if hour_position in ['留连', '赤口', '空亡'] %}bad-result{% else %}good-result{% endif %}">{{ hour_position }}</span></p>
         </div>
         <a href="/" class="button">再次预测</a>
     </div>
